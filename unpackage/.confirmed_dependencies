@@ -1,10 +1,19 @@
 {
 	"main.html": {
 		"resources": [
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"contact.html",
+			"friends.html",
+			"message.html",
+			"subpage-about.html"
 		],
 		"refer": [
-			"setting.html"
+			"setting.html",
+			"guide.html",
+			"subpage-setting.html",
+			"subpage-about.html",
+			"subpage-contact.html",
+			"subpage-chat.html"
 		]
 	},
 	"login.html": {
@@ -50,6 +59,21 @@
 	"unlock.html": {
 		"resources": [
 			"js/mui.locker.js"
+		],
+		"refer": [
+			"login.html"
+		]
+	},
+	"subpage-setting.html": {
+		"resources": [
+			"libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+			"libs/easymob-webim-sdk/json2.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"js/mui.locker.js",
+			"js/feedback.js",
+			"js/feedback-page.js",
+			"libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+			"js/mui.view.js"
 		],
 		"refer": [
 			"login.html"

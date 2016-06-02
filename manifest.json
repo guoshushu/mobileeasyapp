@@ -5,7 +5,7 @@
 		"iPad"
 	],
 	"id": "H58504B50",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "ME客户端",/*应用名称，程序桌面图标名称*/
+	"name": "MobileEasy客户端",/*应用名称，程序桌面图标名称*/
 	"version": {
 		"name": "1.0.0",/*应用版本名称*/
 		"code": "83"
@@ -89,7 +89,7 @@
 			"autoclose": false,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
 			"waiting": true
 		},
-		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+		"runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
 		"distribute": {
 			"apple": {
@@ -174,116 +174,140 @@
 		}
 	},
 	"dependencies": {
-	  "pages": {
-	    "setting.html": {
-	      "href": "setting.html",
-	      "resources": [
-	        "js/mui.min.js",
-	        "js/mui.view.js",
-	        "libs/easymob-webim-sdk/jquery-1.11.1.js",
-	        "libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
-	        "libs/easymob-webim-sdk/json2.js",
-	        "libs/easymob-webim-sdk/easemob.im-1.0.5.js",
-	        "js/feedback.js",
-	        "js/feedback-page.js",
-	        "js/mui.locker.js",
-	        "js/app.js",
-	        "css/mui.min.css",
-	        "fonts/mui.ttf",
-	        "css/feedback-page.css",
-	        "images/iconfont-tianjia.png"
-	      ],
-	      "refer": [
-	        "login.html"
-	      ],
-	      "priority": 1
-	    },
-	    "main.html": {
-	      "href": "main.html",
-	      "resources": [
-	        "css/mui.min.css",
-	        "fonts/mui.ttf",
-	        "js/mui.min.js",
-	        "js/app.js"
-	      ],
-	      "refer": [
-	        "setting.html"
-	      ],
-	      "priority": 1
-	    },
-	    "unlock.html": {
-	      "href": "unlock.html",
-	      "resources": [
-	        "css/mui.min.css",
-	        "fonts/mui.ttf",
-	        "js/mui.min.js",
-	        "js/mui.locker.js",
-	        "js/app.js"
-	      ],
-	      "refer": [
-	        "login.html",
-	        "main.html"
-	      ],
-	      "priority": 0
-	    },
-	    "forget_password.html": {
-	      "href": "forget_password.html",
-	      "resources": [
-	        "css/mui.min.css",
-	        "fonts/mui.ttf",
-	        "css/style.css",
-	        "js/mui.min.js",
-	        "js/app.js"
-	      ],
-	      "priority": 1
-	    },
-	    "reg.html": {
-	      "href": "reg.html",
-	      "resources": [
-	        "css/mui.min.css",
-	        "fonts/mui.ttf",
-	        "css/style.css",
-	        "js/mui.min.js",
-	        "js/app.js"
-	      ],
-	      "refer": [
-	        "login.html"
-	      ],
-	      "priority": 3
-	    },
-	    "login.html": {
-	      "href": "login.html",
-	      "resources": [
-	        "css/mui.min.css",
-	        "fonts/mui.ttf",
-	        "css/style.css",
-	        "js/mui.min.js",
-	        "js/mui.enterfocus.js",
-	        "js/app.js",
-	        "images/qihoo.png",
-	        "images/qq.png",
-	        "images/sinaweibo.png",
-	        "images/weixin.png"
-	      ],
-	      "refer": [
-	        "unlock.html",
-	        "forget_password.html",
-	        "main.html",
-	        "reg.html"
-	      ],
-	      "priority": 0
-	    }
-	  },
-	  "idle": {
-	    "resources": [
-	      "js/service.js",
-	      "libs/easymob-webim-sdk/quickstart.md",
-	      "images/user-photo.png",
-	      "README.md"
-	    ]
-	  }
+		"pages": {
+			"setting.html": {
+				"href": "setting.html",
+				"resources": [
+					"js/mui.min.js",
+					"js/mui.view.js",
+					"libs/easymob-webim-sdk/jquery-1.11.1.js",
+					"libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+					"libs/easymob-webim-sdk/json2.js",
+					"libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+					"js/feedback.js",
+					"js/feedback-page.js",
+					"js/mui.locker.js",
+					"js/app.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/feedback-page.css",
+					"images/iconfont-tianjia.png"
+				],
+				"refer": [
+					"login.html"
+				],
+				"priority": 1
+			},
+			"main.html": {
+				"href": "main.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"js/app.js",
+					"contact.html",
+					"friends.html",
+					"message.html",
+					"subpage-about.html"
+				],
+				"refer": [
+					"setting.html",
+					"guide.html",
+					"subpage-setting.html",
+					"subpage-contact.html",
+					"subpage-chat.html"
+				],
+				"priority": 1
+			},
+			"unlock.html": {
+				"href": "unlock.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"js/mui.locker.js",
+					"js/app.js"
+				],
+				"refer": [
+					"login.html",
+					"main.html"
+				],
+				"priority": 0
+			},
+			"forget_password.html": {
+				"href": "forget_password.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/style.css",
+					"js/mui.min.js",
+					"js/app.js"
+				],
+				"priority": 1
+			},
+			"reg.html": {
+				"href": "reg.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/style.css",
+					"js/mui.min.js",
+					"js/app.js"
+				],
+				"refer": [
+					"login.html"
+				],
+				"priority": 3
+			},
+			"login.html": {
+				"href": "login.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/style.css",
+					"js/mui.min.js",
+					"js/mui.enterfocus.js",
+					"js/app.js",
+					"images/qihoo.png",
+					"images/qq.png",
+					"images/sinaweibo.png",
+					"images/weixin.png"
+				],
+				"refer": [
+					"unlock.html",
+					"forget_password.html",
+					"main.html",
+					"reg.html"
+				],
+				"priority": 0
+			},
+			"subpage-setting.html": {
+				"resources": [
+					"libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+					"libs/easymob-webim-sdk/json2.js",
+					"libs/easymob-webim-sdk/jquery-1.11.1.js",
+					"js/mui.locker.js",
+					"js/feedback.js",
+					"js/feedback-page.js",
+					"libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+					"js/mui.view.js"
+				],
+				"refer": [
+					"login.html"
+				],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"js/service.js",
+				"libs/easymob-webim-sdk/quickstart.md",
+				"images/user-photo.png",
+				"README.md"
+			]
+		}
 	},
 	"unpackage":[
 	  "README.md"
-	]
+	],"fullscreen":true
 }

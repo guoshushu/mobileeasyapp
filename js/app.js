@@ -12,8 +12,8 @@
 		loginInfo = loginInfo || {};
 		loginInfo.account = loginInfo.account || '';
 		loginInfo.password = loginInfo.password || '';
-		if (loginInfo.account.length < 5) {
-			return callback('账号最短为 5 个字符');
+		if (!checkMobile(loginInfo.account)) {
+			return callback('请确认手机号码是否正确');
 		}
 		if (loginInfo.password.length < 6) {
 			return callback('密码最短为 6 个字符');
@@ -68,15 +68,12 @@
 		regInfo = regInfo || {};
 		regInfo.account = regInfo.account || '';
 		regInfo.password = regInfo.password || '';
-		if (regInfo.account.length < 5) {
-			return callback('用户名最短需要 5 个字符');
+		if (!checkMobile(regInfo.account)) {
+			return callback('请确认手机号码是否正确');
 		}
 		if (regInfo.password.length < 6) {
 			return callback('密码最短需要 6 个字符');
 		}
-		//		var users = JSON.parse(localStorage.getItem('$users') || '[]');
-		//		users.push(regInfo);
-		//		localStorage.setItem('$users', JSON.stringify(users));
 		mui.ajax('http://192.168.11.241:8080/api/create', {
 			data: JSON.stringify({
 				'username': regInfo.account,
@@ -128,15 +125,21 @@
 		return (email.length > 3 && email.indexOf('@') > -1);
 	};
 
+	var checkMobile = function(mobile) {
+		mobile = mobile || '';
+		var pattern = /^1[345789][0-9]{9}$/;
+		return pattern.test(mobile);
+	};
+
 	/**
 	 * 找回密码
 	 **/
-	owner.forgetPassword = function(email, callback) {
+	owner.forgetPassword = function(mobile, callback) {
 		callback = callback || $.noop;
-		if (!checkEmail(email)) {
-			return callback('邮箱地址不合法');
+		if (!checkMobile(mobile)) {
+			return callback('手机号码不合法');
 		}
-		return callback(null, '新的随机密码已经发送到您的邮箱，请查收邮件。');
+		return callback(null, '新的随机密码已经发送到您的手机，请查看短信。');
 	};
 
 	/**
