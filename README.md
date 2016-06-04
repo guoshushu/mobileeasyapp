@@ -3,6 +3,13 @@
 
 ## 核心功能
 1. 启动App后校验登录状态，若已登录，直接跳转应用首页；否则，显示登录页面；
-2. 支持本地注册；
-3. 支持设置手势密码，登录时可使用手势密码代替账号、密码；
-4. 支持评分、分享、拨打客服电话
+2. 支持服务端API注册；
+
+## 效果展示
+
+<img src="blob/devel/images/welcome1.png">
+<img src="blob/devel/images/welcome2.png">
+<img src="blob/devel/images/welcome3.png">
+<img src="blob/devel/images/reg.png">
+<img src="blob/devel/images/login.png">
+<img src="blob/devel/images/settting.png">
