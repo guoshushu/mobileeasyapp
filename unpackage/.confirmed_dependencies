@@ -76,7 +76,24 @@
 			"js/mui.view.js"
 		],
 		"refer": [
-			"login.html"
+			"login.html",
+			"guide.html"
+		]
+	},
+	"subpage-contact.html": {
+		"resources": [
+			"css/mui.indexedlist.css",
+			"images/user-photo.png",
+			"js/mui.indexedlist.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"subpage-about.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css"
 		]
 	}
 }

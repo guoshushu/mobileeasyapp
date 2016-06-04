@@ -4,6 +4,7 @@
  * 请注意将相关方法调整成 “基于服务端Service” 的实现。
  **/
 (function($, owner) {
+	var serverip = 'http://mobileeasy.cc:19898';
 	/**
 	 * 用户登录
 	 **/
@@ -22,7 +23,7 @@
 		//		var authed = users.some(function(user) {
 		//			return loginInfo.account == user.account && loginInfo.password == user.password;
 		//		});
-		mui.ajax('http://192.168.11.241:8080/api/i/userLogin', {
+		mui.ajax(serverip + '/api/i/userLogin', {
 			data: '{ }',
 			dataType: 'json', //服务器返回json格式数据
 			type: 'post', //HTTP请求类型
@@ -74,7 +75,7 @@
 		if (regInfo.password.length < 6) {
 			return callback('密码最短需要 6 个字符');
 		}
-		mui.ajax('http://192.168.11.241:8080/api/create', {
+		mui.ajax(serverip + '/api/create', {
 			data: JSON.stringify({
 				'username': regInfo.account,
 				'password': regInfo.password

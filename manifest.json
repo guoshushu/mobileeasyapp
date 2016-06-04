@@ -293,8 +293,29 @@
 					"js/mui.view.js"
 				],
 				"refer": [
-					"login.html"
+					"login.html",
+					"guide.html"
 				],
+				"priority": 0
+			},
+			"subpage-contact.html": {
+				"resources": [
+					"css/mui.indexedlist.css",
+					"images/user-photo.png",
+					"js/mui.indexedlist.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"subpage-about.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},
@@ -302,7 +323,6 @@
 			"resources": [
 				"js/service.js",
 				"libs/easymob-webim-sdk/quickstart.md",
-				"images/user-photo.png",
 				"README.md"
 			]
 		}
